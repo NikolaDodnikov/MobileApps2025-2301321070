@@ -13,8 +13,6 @@ public class NoteRepository {
 
         NoteDatabase db = NoteDatabase.getDatabase(application);
         noteDao = db.noteDao();
-
-
         allNotes = noteDao.getAllNotes();
     }
 
@@ -22,6 +20,12 @@ public class NoteRepository {
     public LiveData<List<Note>> getAllNotes() {
         return allNotes;
     }
+
+
+    public LiveData<Note> getNoteById(int id) {
+        return noteDao.getNoteById(id);
+    }
+
 
     public void insert(Note note) {
         NoteDatabase.databaseWriteExecutor.execute(() -> {

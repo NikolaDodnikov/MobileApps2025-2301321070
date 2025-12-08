@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-// @Entity маркира този клас като таблица в базата данни
+
 @Entity(tableName = "notes")
 public class Note {
 

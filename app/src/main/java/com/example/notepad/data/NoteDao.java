@@ -16,6 +16,9 @@ public interface NoteDao {
     @Query("SELECT * FROM notes ORDER BY id DESC")
     LiveData<List<Note>> getAllNotes();
 
+    @Query("SELECT * FROM notes WHERE id = :id")
+    LiveData<Note> getNoteById(int id); // ⭐ НОВ МЕТОД
+
 
     @Insert
     void insert(Note note);
@@ -27,4 +30,6 @@ public interface NoteDao {
 
     @Delete
     void delete(Note note);
+
+
 }
