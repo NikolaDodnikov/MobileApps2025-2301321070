@@ -88,10 +88,10 @@ public class NoteDetailFragment extends Fragment {
             return true;
         } else if (itemId == R.id.action_delete) {
             deleteNote();
-            navController.popBackStack(); // Връщане към списъка след изтриване
+            navController.popBackStack();
             return true;
         } else if (itemId == android.R.id.home) {
-            // Обработка на стрелката 'Назад' в ActionBar
+
             navController.popBackStack();
             return true;
         }
@@ -119,7 +119,7 @@ public class NoteDetailFragment extends Fragment {
             Toast.makeText(getContext(), "Бележката е създадена!", Toast.LENGTH_SHORT).show();
         } else {
 
-            note.setId(currentNoteId); // Трябва да запазим старото ID за обновяване
+            note.setId(currentNoteId);
             noteViewModel.update(note);
             Toast.makeText(getContext(), "Бележката е обновена!", Toast.LENGTH_SHORT).show();
         }
@@ -130,7 +130,7 @@ public class NoteDetailFragment extends Fragment {
 
     private void deleteNote() {
         if (currentNoteId != -1) {
-            Note note = new Note("", ""); // Създаваме обект само с ID за изтриване
+            Note note = new Note("", "");
             note.setId(currentNoteId);
             noteViewModel.delete(note);
             Toast.makeText(getContext(), "Бележката е изтрита.", Toast.LENGTH_SHORT).show();
