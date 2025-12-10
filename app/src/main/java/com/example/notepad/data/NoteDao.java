@@ -17,8 +17,10 @@ public interface NoteDao {
     LiveData<List<Note>> getAllNotes();
 
     @Query("SELECT * FROM notes WHERE id = :id")
-    LiveData<Note> getNoteById(int id); // ⭐ НОВ МЕТОД
+    LiveData<Note> getNoteById(int id);
 
+    @Query("SELECT * FROM notes WHERE title LIKE :searchQuery OR content LIKE :searchQuery ORDER BY id DESC")
+    LiveData<List<Note>> searchNotes(String searchQuery);
 
     @Insert
     void insert(Note note);

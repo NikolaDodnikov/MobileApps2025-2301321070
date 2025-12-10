@@ -1,4 +1,4 @@
-package com.example.notepad.adapter; // ⭐ Проверете пакета
+package com.example.notepad.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;

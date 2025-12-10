@@ -40,9 +40,16 @@ public class NoteViewModel extends AndroidViewModel {
         return allNotes;
     }
 
+    public LiveData<List<Note>> searchNotes(String searchQuery) {
 
+        String formattedQuery = "%" + searchQuery + "%";
+
+
+        return repository.searchNotes(formattedQuery);
+    }
 
     public LiveData<Note> getNoteById(int id) {
         return repository.getNoteById(id);
     }
+
 }

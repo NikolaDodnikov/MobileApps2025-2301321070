@@ -99,7 +99,7 @@ public class NoteDetailFragment extends Fragment {
         return super.onOptionsItemSelected(item);
     }
 
-    // --- CRUD Методи ---
+
 
     private void saveNote() {
         String title = editTextTitle.getText().toString().trim();

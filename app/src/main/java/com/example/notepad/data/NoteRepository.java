@@ -40,7 +40,10 @@ public class NoteRepository {
         });
     }
 
+    public LiveData<List<Note>> searchNotes(String searchQuery) {
 
+        return noteDao.searchNotes(searchQuery);
+    }
     public void delete(Note note) {
         NoteDatabase.databaseWriteExecutor.execute(() -> {
             noteDao.delete(note);
